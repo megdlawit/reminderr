@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="A progressive web app to keep track of upcoming events">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="theme-color" content="#585858">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" type="image/png" href="./img/logo-512.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/event.js"></script>
+    <script src="./js/editui.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/app.js"></script>
+    <title>Reminder PWA</title>
+  </head>
+  <body>
+    <main>
+      <header id="top-box" class="base">
+        <h1>Reminders</h1>
+        <div>
+          <input id="plus" class="button" type="button" value="+">
+        </div>
+      </header>
+      <div id="reminder-box">
+        <div id="reminder-wrap">
+        </div>
+        <div id="reminders-wrap">
+        </div>
+      </div>
+      <footer id="bottom-box" class="base">
+        <input id="update" class="button" type="button" value="Update">
+        <span id="version" class="version"></span>
+      </footer>
+      <div id="edit-box" class="edit">
+        <div id="edit-wrap">
+          <div>
+            <div id="edit-date-label">
+              <label>Date</label>
+            </div>
+            <div id="edit-date">
+              <input id="month" type="text" size="2" maxlength="2">
+              <label>/</label>
+              <input id="day" type="text" size="2" maxlength="2">
+              <label>/</label>
+              <input id="year" type="text" size="4" maxlength="4">
+            </div>
+            <div id="edit-time-label">
+              <label for="hours">Time</label>
+            </div>
+            <div id="edit-time">
+              <input id="hours" type="text" size="2" maxlength="2">
+              <label for="minutes">:</label>
+              <input id="minutes" type="text" size="2" maxlength="2">
+              <div id="edit-am-pm">
+                <input type="radio" id="am" class="am-pm" name="am-pm" value="am">
+                <label for="am" class="am-pm">AM</label>
+                <div></div>
+                <input type="radio" id="pm" class="am-pm" name="am-pm" value="pm">
+                <label for="pm" class="am-pm">PM</label>
+                <div></div>
+              </div>
+              <label id="edit-duration-label0">for</label>
+              <input id="duration" type="text" size="3" maxlength="3">
+              <label id="edit-duration-label1" for="duration"> minutes</label>
+            </div>
+            <div id="edit-note-label">
+              <label for="note">Note</label>
+            </div>
+            <div id="edit-note">
+              <input id="note" type="text">
+            </div>
+          </div>
+          <div id="edit-buttons">
+            <input id="edit-save" class="button" type="button" value="Save">
+            <input id="edit-remove" class="button" type="button" value="Remove">
+            <input id="edit-cancel" class="button" type="button" value="Cancel">
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      if("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/reminder-pwa/sw.js")
+          .then(function() { console.log("registered service worker"); })
+          .catch(function() { console.log("could not register service worker"); });
+      }
+    </script>
+  </body>
+</html>

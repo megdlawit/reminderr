@@ -1,0 +1,284 @@
+:root {
+  --vh: vh;
+  --top-height: 4em;
+  --bottom-height: 3em;
+}
+
+html {
+  font-family: Tahoma, sans-serif;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+main {
+  position: relative;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: #d7d5d1;
+}
+
+.button {
+  border: 1px solid #939189;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.base {
+  background-color: #52504f;
+  color: #faf9f8;
+}
+
+.base .button {
+  background-color: #d7d5d1;
+}
+
+.reminder {
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr;
+  align-items: center;
+  height: 5em;
+  border-bottom: 1px solid #939189;
+  font-size: 1.0em;
+}
+
+.reminder span {
+  display: block;
+}
+
+.reminder > *{
+  padding: 0.3em;
+}
+
+.reminder .until {
+  color: #707090;
+  font-size: 0.9em;
+}
+
+.reminder .date {
+  color: #404040;
+}
+
+.reminder .note {
+  color: #000000;
+  font-size: 1.1em;
+  overflow: hidden;
+}
+
+.until-past {
+  background-color: #808080;
+}
+
+.until-day {
+  background-color: #ffd077;
+}
+
+.until-week {
+  background-color: #d8e8ff;
+}
+
+.until-month {
+  background-color: #f4f0ff;
+}
+
+.until-future {
+  background-color: #ffffff;
+}
+
+.edit {
+  background-color: #f0f0f0;
+  color: #202020;
+  font-size: 2em;
+}
+
+.edit .button {
+  margin-left: 0.2em;
+  background-color: #585858;
+  color: #f8f8f8;
+  font-size: 1em;
+}
+
+.edit input[type=text] {
+  font-size: 0.95em;
+  text-align: center;
+}
+
+.edit .am-pm {
+  font-size: 0.5em;
+}
+
+.version {
+  color: #808080;
+}
+
+#top-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--top-height);
+  padding: 0.5em;
+}
+
+#top-box > * {
+  display: inline-block;
+}
+
+#top-box h1 {
+  margin: 0
+}
+
+#top-box .button {
+  height: 1.4em;
+  font-size: 2.0em;
+}
+
+#top-box .button#plus {
+  width: 1.1em;
+}
+
+#reminder-box {
+  height: calc(100% - var(--top-height) - var(--bottom-height));
+  overflow: hidden;
+}
+
+#reminder-wrap {
+  position: relative;
+}
+
+#bottom-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: top;
+  box-sizing: border-box;
+  height: var(--bottom-height);
+  padding: 0.5em;
+}
+
+#bottom-box .button {
+  height: 1.3em;
+  font-size: 1.6em;
+  background-color: #808080;
+  border-color: #404040;
+  color: #000000;
+  margin-right: 0.5em;
+}
+
+#bottom-box .button#update {
+  width: 3.8em;
+}
+
+#bottom-box > * {
+  display: inline-block;
+}
+
+#console-box {
+  flex-grow: 1;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0 0.5em;
+  border: 1px solid #808080;
+  border-radius: 3px;
+  margin-right: 0.5em;
+  background-color: #e8e8e8;
+  color: #303030;
+  font-family: monosspace;
+  overflow-y: scroll;
+}
+
+#edit-box {
+  display: none;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 96%;
+  height: 96%;
+  box-sizing: border-box;
+  padding: 1em;
+  border: 2px solid #a0a0a0;
+  border-radius: 2px;
+}
+
+#edit-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#edit-date-label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#edit-date {
+  display: grid;
+  grid-template-columns: 2em 1em 2em 1em 4em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#edit-time-label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#edit-time {
+  display: grid;
+  grid-template-columns: 2em 1em 2em auto;
+  grid-row-gap: 0.2em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#edit-duration-label0 {
+  margin-right: 0.1em;
+  text-align: right;
+}
+
+#duration {
+  grid-column: span 2;
+}
+
+#edit-duration-label1 {
+  margin-left: 0.1em;
+}
+
+#edit-am-pm {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+}
+
+#edit-note-label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#edit-note {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+}
+
+#note {
+  text-align: left;
+}
+
+#edit-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#edit-remove {
+  display: none;
+}

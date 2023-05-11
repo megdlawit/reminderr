@@ -1,0 +1,58 @@
+## Reminder PWA
+### To Do
+- [ ] Add better icon
+- [ ] Fix scroll after reminder remove
+- [ ] Disable default touch events for rest of screen
+- [ ] Remove old reminder data
+- [ ] Persist scroll velocity and decay slowly
+- [ ] Improve edit controls with calendar, month buttons, etc.
+- [ ] Fix layout for landscape, moving header/footer/controls to left
+- [ ] Switch save/load to use indexedDB
+### Done
+- [x] Add basic html with reminders-box
+- [x] Add loadLocalRemindersData
+- [x] Create reminders in a loop
+- [x] Add style sheet
+- [x] Capture console log
+- [x] Create console output on footer
+- [x] Add more files to cache
+- [x] Add all files to cache
+- [x] Add drawReminders(reminders, remindersBox)
+- [x] Figure out how to update on phone
+- [x] Add enough reminders to scroll
+- [x] Add scroll events
+- [x] Add scroll fcns and rewrite touch events using them
+- [x] Add mouse events using scroll fcns
+- [x] Fix vertical height to not scroll
+- [x] Connect long press to edit pane (w/ edit & remove buttons)
+- [x] Add an edit button to bring up data pane with update/remove/cancel buttons
+- [x] Connect double click to edit pane
+- [x] Add toData() to reminder prototype, return json data
+- [x] Implement saveLocalReminders()
+- [x] Implement saveLocalRemindersData(), store in local storage 
+- [x] Implement loadLocalRemindersData(), read from local storage 
+- [x] Add sorting of reminders
+- [x] Add an id property to reminder, count up in createReminder
+- [x] Layout edit box inputs
+- [x] Add update button for app, clear cache
+- [x] Display data from reminder in edit box, set data_id attribute of dataBox
+- [x] Implement delete: find reminder by data_id of dataBox, remove with splice
+- [x] Implement save: find reminder by data_id of dataBox, remove with splice, create new from data, re-render
+- [x] Implement add: create new from data, re-render
+- [x] Add data controls to enter and change data
+- [x] Set background color of reminders according to until
+- [x] Increase reminder font size and make 2.5em height
+- [x] Store hasTime as seconds > 0, store duration minutes as milliseconds
+- [x] Fix 2-line reminder until (years/mos, mos, [< 2mos] weeks/days, days, [< day]  hours, less than hour)
+- [x] Fix 2-line reminder date/time on two lines, note on two lines
+- [x] Fix 2-line reminder note
+- [x] Make reminders immutable, add data id
+- [x] Create better fake data for initial install with notes as instructions and future dates
+- [x] Restore long press in touch events
+- [x] Update writeEditUi to take ui, time, and note
+- [x] Update plus to insert event one week in the future
+- [x] Fix 12pm bug
+- [x] Remove console capture and debug, set verison only
+- [x] Move update button to bottom, next to version
+- [x] Set button size for ios
+- [x] Restore default data
